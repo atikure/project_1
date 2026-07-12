@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:project_1/screen/forgot.dart';
 import 'package:project_1/screen/home.dart';
 import 'package:project_1/screen/reg.dart';
 class LoginScreen extends StatefulWidget {
@@ -18,7 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.network("https://coderangon.com/frontend/assets/images/logo/lgo.png"),
-          Text("Login Here", style: TextStyle(
+          Text("Sign In Here", style: TextStyle(
             fontWeight: FontWeight.bold,
               color: Colors.blue,fontSize: 20),),
           Padding(
@@ -27,6 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
               controller: email,
               decoration: InputDecoration(
                 labelText: "Email",
+                prefixIcon: Icon(Icons.email),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
                 )
@@ -38,12 +40,32 @@ class _LoginScreenState extends State<LoginScreen> {
             child: TextField(
               controller: password,
               decoration: InputDecoration(
-                  labelText: "Passeord",
+                  labelText: "Password",
+                prefixIcon: Icon(Icons.lock),
+                suffixIcon: Icon(Icons.remove_red_eye),
+                
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
                 )
               ),
             ),
+          ),
+          Container(
+            alignment: Alignment.centerRight,
+            child: InkWell(
+                onTap: (){
+                  //Navigator.push(context, MaterialPageRoute(builder: (context)=> RegScreen()));
+                  //log("===");
+                },
+                child:
+                InkWell(
+                  onTap: (){
+                    //log("===");
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> ForgotScreen()));
+                  },
+                  child: Text("Forgotten password?", style: TextStyle(color: Colors.blue),
+                  ),
+                )),
           ),
           InkWell(
             onTap: (){
@@ -51,8 +73,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 Navigator.push(context, MaterialPageRoute(builder: (context)=> HomeScreen()));
               }
               else{
-                log("Wrong gmail & password");
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Wrong gmail & password"),backgroundColor: Colors.blue,));
+                log("Wrong Gmail & Password");
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:
+                Text("Wrong Gmail & Password"),backgroundColor: Colors.blue,));
               }
             },
             child: Card(
@@ -63,7 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text("Login",style: TextStyle(color: Colors.white),),
+                    child: Text("Sign In",style: TextStyle(color: Colors.white),),
                   ),
                 ],
               ),
@@ -73,13 +96,14 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             spacing: 10,
             children: [
-              Text("Not Register Yet ?"),
+              Text("Don't have an account?"),
               InkWell(
                 onTap: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=> RegScreen()));
-                  log("===");
+                  //log("===");
                 },
-                  child: Text("Register Now", style: TextStyle(color: Colors.blue),)),
+                  child: Text("Sign Up", style: TextStyle(color: Colors.blue),
+                  )),
             ],
           )
         ],

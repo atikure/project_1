@@ -23,6 +23,7 @@ class _RegScreenState extends State<RegScreen> {
             child: TextField(
               decoration: InputDecoration(
                 labelText: "Name",
+                  prefixIcon: Icon(Icons.drive_file_rename_outline_outlined),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
                 )
@@ -34,6 +35,7 @@ class _RegScreenState extends State<RegScreen> {
             child: TextField(
               decoration: InputDecoration(
                   labelText: "Email",
+                  prefixIcon: Icon(Icons.email),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
                 )
@@ -45,6 +47,7 @@ class _RegScreenState extends State<RegScreen> {
             child: TextField(
               decoration: InputDecoration(
                   labelText: "Phone",
+                  prefixIcon: Icon(Icons.phone),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
                 )
@@ -56,6 +59,8 @@ class _RegScreenState extends State<RegScreen> {
             child: TextField(
               decoration: InputDecoration(
                   labelText: "Password",
+                  prefixIcon: Icon(Icons.lock),
+                  suffixIcon: Icon(Icons.remove_red_eye),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
                 )
@@ -64,7 +69,7 @@ class _RegScreenState extends State<RegScreen> {
           ),
           InkWell(
             onTap: (){
-              log("===");
+              //log("===");
             },
             child: Card(
               margin: EdgeInsets.symmetric(horizontal: 20,vertical: 8),
@@ -84,11 +89,11 @@ class _RegScreenState extends State<RegScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             spacing: 10,
             children: [
-              Text("Already Register"),
+              Text("Already Registered"),
               InkWell(
                   onTap: (){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginScreen()));
-                    log("===");
+                    //log("===");
                   },
                   child: Text("Login Now", style: TextStyle(color: Colors.blue),)),
             ],
