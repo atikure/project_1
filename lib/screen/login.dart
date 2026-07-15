@@ -1,8 +1,11 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:project_1/screen/custom_widegt/text_widget.dart';
 import 'package:project_1/screen/forgot.dart';
 import 'package:project_1/screen/home.dart';
 import 'package:project_1/screen/reg.dart';
+import 'custom_widegt/text_field.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
   @override
@@ -19,37 +22,9 @@ class _LoginScreenState extends State<LoginScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.network("https://coderangon.com/frontend/assets/images/logo/lgo.png"),
-          Text("Sign In Here", style: TextStyle(
-            fontWeight: FontWeight.bold,
-              color: Colors.blue,fontSize: 20),),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              controller: email,
-              decoration: InputDecoration(
-                labelText: "Email",
-                prefixIcon: Icon(Icons.email),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                )
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              controller: password,
-              decoration: InputDecoration(
-                  labelText: "Password",
-                prefixIcon: Icon(Icons.lock),
-                suffixIcon: Icon(Icons.remove_red_eye),
-                
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                )
-              ),
-            ),
-          ),
+          MyTextWidget(titel: "Sign In Here",),
+          MyTextField(email: email,hint: "Email",),
+          MyTextField(email: password, hint: "Password"),
           Container(
             alignment: Alignment.centerRight,
             child: InkWell(
@@ -111,3 +86,4 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
+

@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:project_1/screen/custom_widegt/text_field.dart';
 import 'package:project_1/screen/login.dart';
 class RegScreen extends StatefulWidget {
   const RegScreen({super.key});
@@ -9,6 +10,10 @@ class RegScreen extends StatefulWidget {
 }
 
 class _RegScreenState extends State<RegScreen> {
+  TextEditingController name= TextEditingController();
+  TextEditingController email= TextEditingController();
+  TextEditingController phone= TextEditingController();
+  TextEditingController password= TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,55 +23,11 @@ class _RegScreenState extends State<RegScreen> {
           Text("Register Here", style: TextStyle(
             fontWeight: FontWeight.bold,
               color: Colors.blue,fontSize: 40),),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              decoration: InputDecoration(
-                labelText: "Name",
-                  prefixIcon: Icon(Icons.drive_file_rename_outline_outlined),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                )
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              decoration: InputDecoration(
-                  labelText: "Email",
-                  prefixIcon: Icon(Icons.email),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                )
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              decoration: InputDecoration(
-                  labelText: "Phone",
-                  prefixIcon: Icon(Icons.phone),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                )
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              decoration: InputDecoration(
-                  labelText: "Password",
-                  prefixIcon: Icon(Icons.lock),
-                  suffixIcon: Icon(Icons.remove_red_eye),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                )
-              ),
-            ),
-          ),
+          MyTextField(email: name, hint: "Enter your name"),
+          MyTextField(email: email, hint: "Enter your email"),
+          MyTextField(email: phone, hint: "Enter your phone"),
+          MyTextField(email: password, hint: "Enter your password"),
+
           InkWell(
             onTap: (){
               //log("===");
