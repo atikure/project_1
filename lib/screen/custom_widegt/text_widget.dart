@@ -18,7 +18,7 @@ class MyTextWidget extends StatelessWidget {
       titel!,
       maxLines: maxLines,
       overflow: overflow,
-      style: TextStyle(color: tColor ?? Colors.blue, fontSize: tSize ?? 30,),
+      style: TextStyle(color: tColor ?? Colors.black, fontSize: tSize ?? 30,),
     );
   }
 }

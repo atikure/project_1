@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:project_1/screen/login.dart';
@@ -17,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
     //log("===333===");
     super.initState();
   }
-  timerFun()async{
+  Future<void> timerFun()async{
     await Future.delayed(Duration(seconds: 3)).then((v){
       //log("===222===");
       Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginScreen()));

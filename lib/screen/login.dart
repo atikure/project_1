@@ -2,7 +2,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:project_1/screen/custom_widegt/text_widget.dart';
 import 'package:project_1/screen/forgot.dart';
-import 'package:project_1/screen/home.dart';
+import 'package:project_1/screen/note_app/home.dart';
 import 'package:project_1/screen/reg.dart';
 import 'custom_widegt/text_field.dart';
 
