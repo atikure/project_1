@@ -17,15 +17,24 @@ class Students {
       "phone" : "01745246825",
       "email" : "mou@gmail.com",
       "dep" : "CST",
-      "inActive" : true
+      "inActive" : false
     },
     {
       "id" : 103,
+      "image" : "https://avatars.githubusercontent.com/u/297609421?v=4",
+      "name" : "Pritom Sarker",
+      "phone" : "01785246254",
+      "email" : "pritom@gmail.com",
+      "dep" : "CST",
+      "inActive" : true
+    },
+    {
+      "id" : 104,
       "image" : "https://avatars.githubusercontent.com/u/232642638?v=4",
       "name" : "Mahamudul Hasan",
       "phone" : "01724582542",
       "email" : "mahamudul@gmail.com",
-      "dep" : "CSE",
+      "dep" : "CST",
       "inActive" : false
     },
   ];
