@@ -16,7 +16,7 @@ class _StudentAddState extends State<StudentAdd> {
   TextEditingController phone = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController dep = TextEditingController();
-  //TextEditingController status = TextEditingController();
+  TextEditingController status = TextEditingController();
 
 
 
